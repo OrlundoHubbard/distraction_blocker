@@ -1,0 +1,18 @@
+{
+    "name": "Distraction Blocker",
+    "version": "1.0",
+    "description": "Blocks distracting websites during specific times to keep you on course",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}
