@@ -15,3 +15,10 @@ function isWithinBlockingPeriod() {
     const currentHour = now.getHours();
     return currentHour >= startTime && currentHour < endTime;
 }
+
+// Define a function to block the URLs
+function blockUrls() {
+    chrome.webRequest.onBeforeRequest.addListener(
+        function(details) {return {cancel: true}; }
+    )
+}
