@@ -22,3 +22,11 @@ function blockUrls() {
         function(details) {return {cancel: true}; }
     )
 }
+
+// add an event listener to detect when the extension is installed or updated
+chrome.runtime.onInstalled.addListener(function() {
+    // set up the initial state of the extension
+    if (isWithinBlockingPeriod()) {
+        blockUrls();
+    }
+});
